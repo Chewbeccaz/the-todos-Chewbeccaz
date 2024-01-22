@@ -28,7 +28,7 @@ export const BookApp = () => {
   return (
     <>
       <h4>To Be Read</h4>
-      <ShowBooks bookList={books} />
+      <ShowBooks bookList={books} handleCheckbox={handleCheckBox} />
     </>
   );
 };

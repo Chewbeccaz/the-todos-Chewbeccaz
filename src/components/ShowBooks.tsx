@@ -2,9 +2,14 @@ import { Book } from "../models/Book";
 
 interface IShowBooksProps {
   bookList: Book[];
+  handleCheckbox: (id: number) => void;
 }
 
 export const ShowBooks = (props: IShowBooksProps) => {
+  const handleCheckBox = (id: number) => {
+    props.handleCheckbox(id);
+  };
+
   return (
     <>
       <h1>TBR-2024</h1>
