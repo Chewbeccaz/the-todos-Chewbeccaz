@@ -17,12 +17,18 @@ export const BookApp = () => {
     new Book(11, "Wish You Were Here", "Jodi Picoult", false),
   ]);
 
-  const handleCheckBox = (id: number) => {};
+  const handleCheckBox = (id: number) => {
+    setBooks(
+      [...books].map((book) =>
+        book.id === id ? { ...book, isChecked: !book.isChecked } : book
+      )
+    );
+  };
 
   return (
     <>
       <h4>To Be Read</h4>
-      <ShowBooks bookList={books} />
+      <ShowBooks bookList={books} handleCheckbox={handleCheckBox} />
     </>
   );
 };
