@@ -1,10 +1,10 @@
 import "./App.css";
-import { PresentBook } from "./components/PresentBook";
+import { BookApp } from "./components/BookApp";
 
 function App() {
   return (
     <>
-      <PresentBook />
+      <BookApp />
     </>
   );
 }
