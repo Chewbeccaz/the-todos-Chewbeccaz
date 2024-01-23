@@ -1,4 +1,7 @@
 import { Book } from "../models/Book";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 interface IShowBooksProps {
   bookList: Book[];
@@ -51,10 +54,16 @@ export const ShowBooks = (props: IShowBooksProps) => {
                 />
               </td>
               <td>
-                <button>ÄndraIkon</button>
+                <button>
+                  {" "}
+                  <FontAwesomeIcon className="edit-icon" icon={faPenToSquare} />
+                </button>
               </td>
               <td>
-                <button>Sopkorgsikon.</button>
+                <button>
+                  {" "}
+                  <FontAwesomeIcon className="delete-icon" icon={faTrash} />
+                </button>
               </td>
             </tr>
           ))}
