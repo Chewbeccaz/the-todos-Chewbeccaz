@@ -16,6 +16,7 @@ export const BookApp = () => {
     new Book(9, "Confess", "Colleen Hoover", false),
     new Book(10, "Layla", "Colleen Hoover", false),
     new Book(11, "Wish You Were Here", "Jodi Picoult", false),
+    new Book(12, "Slammed", "Colleen Hoover", false),
   ]);
 
   const handleCheckBox = (id: number) => {
@@ -30,7 +31,12 @@ export const BookApp = () => {
     setBooks([...books].filter((book) => book.id !== id));
   };
 
-  const handleAddBook = (addedTitle: string, addedAuthor: string) => {};
+  const handleAddBook = (addedTitle: string, addedAuthor: string) => {
+    setBooks([
+      ...books,
+      new Book(books.length + 1, addedTitle, addedAuthor, false),
+    ]);
+  };
 
   return (
     <>

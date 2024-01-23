@@ -10,6 +10,7 @@ export const AddBook = (props: IAddBookProps) => {
 
   const handleClick = () => {
     props.addBook(newBookTitle, newBookAuthor);
+    console.log(newBookTitle, newBookAuthor);
   };
 
   //   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
