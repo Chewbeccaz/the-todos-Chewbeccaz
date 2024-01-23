@@ -50,3 +50,9 @@ export const BookApp = () => {
     </>
   );
 };
+
+{
+  /*IMORGON: Kolla upp buggen med bakgrunden som flyttar sig
+- Fixa stylingen på inputsen. 
+- Lägg till ChangeBook-funktionen*/
+}
