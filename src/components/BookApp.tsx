@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Book } from "../models/Book";
 import { ShowBooks } from "./ShowBooks";
+import { AddBook } from "./AddBook";
 
 export const BookApp = () => {
   const [books, setBooks] = useState<Book[]>([
@@ -15,6 +16,7 @@ export const BookApp = () => {
     new Book(9, "Confess", "Colleen Hoover", false),
     new Book(10, "Layla", "Colleen Hoover", false),
     new Book(11, "Wish You Were Here", "Jodi Picoult", false),
+    new Book(12, "Slammed", "Colleen Hoover", false),
   ]);
 
   const handleCheckBox = (id: number) => {
@@ -29,9 +31,17 @@ export const BookApp = () => {
     setBooks([...books].filter((book) => book.id !== id));
   };
 
+  const handleAddBook = (addedTitle: string, addedAuthor: string) => {
+    setBooks([
+      ...books,
+      new Book(books.length + 1, addedTitle, addedAuthor, false),
+    ]);
+  };
+
   return (
     <>
-      <h4>To Be Read</h4>
+      <h1>To Be Read</h1>
+      <AddBook addBook={handleAddBook} />
       <ShowBooks
         bookList={books}
         handleCheckbox={handleCheckBox}
@@ -40,3 +50,9 @@ export const BookApp = () => {
     </>
   );
 };
+
+{
+  /*IMORGON: Kolla upp buggen med bakgrunden som flyttar sig
+- Fixa stylingen på inputsen. 
+- Lägg till ChangeBook-funktionen*/
+}
