@@ -1,0 +1,48 @@
+:root {
+  --th-color: #0035599d;
+  --td-color: #0b9aa7a4;
+  --even-color: #37c4aaa1;
+  --odd-color: #b6e9c1ad;
+  --secondary-color: #eefbeb;
+}
+
+body {
+  background-image: url(../src/bilder/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+
+.book-table th,
+.book-table td {
+  border: 1px solid #ebf0ef;
+  padding: 16px;
+  text-align: center;
+}
+
+.book-table th {
+  background-color: var(--th-color);
+  color: white;
+}
+
+.even-row {
+  background-color: var(--even-color);
+}
+
+.odd-row {
+  background-color: var(--odd-color);
+}
+
+.edit-icon,
+.delete-icon {
+  color: var(--th-color);
+}
+h1 {
+  color: white;
+}
