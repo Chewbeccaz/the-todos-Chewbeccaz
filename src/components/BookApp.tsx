@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Book } from "../models/Book";
 import { ShowBooks } from "./ShowBooks";
+import { AddBook } from "./AddBook";
 
 export const BookApp = () => {
   const [books, setBooks] = useState<Book[]>([
@@ -29,9 +30,12 @@ export const BookApp = () => {
     setBooks([...books].filter((book) => book.id !== id));
   };
 
+  const handleAddBook = (addedTitle: string, addedAuthor: string) => {};
+
   return (
     <>
-      <h4>To Be Read</h4>
+      <h1>To Be Read</h1>
+      <AddBook addBook={handleAddBook} />
       <ShowBooks
         bookList={books}
         handleCheckbox={handleCheckBox}

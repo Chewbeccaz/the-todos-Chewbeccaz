@@ -21,7 +21,6 @@ export const ShowBooks = (props: IShowBooksProps) => {
 
   return (
     <>
-      <h1>TBR-2024</h1>
       <table className="book-table">
         <thead>
           <tr>
