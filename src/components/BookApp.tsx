@@ -25,10 +25,18 @@ export const BookApp = () => {
     );
   };
 
+  const handleDelete = (id: number) => {
+    setBooks([...books].filter((book) => book.id !== id));
+  };
+
   return (
     <>
       <h4>To Be Read</h4>
-      <ShowBooks bookList={books} handleCheckbox={handleCheckBox} />
+      <ShowBooks
+        bookList={books}
+        handleCheckbox={handleCheckBox}
+        handleDelete={handleDelete}
+      />
     </>
   );
 };

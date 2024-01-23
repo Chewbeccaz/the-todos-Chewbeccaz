@@ -7,11 +7,16 @@ import "../ShowBooks.css";
 interface IShowBooksProps {
   bookList: Book[];
   handleCheckbox: (id: number) => void;
+  handleDelete: (id: number) => void;
 }
 
 export const ShowBooks = (props: IShowBooksProps) => {
   const handleCheckBox = (id: number) => {
     props.handleCheckbox(id);
+  };
+
+  const handleDelete = (id: number) => {
+    props.handleDelete(id);
   };
 
   return (
@@ -48,8 +53,7 @@ export const ShowBooks = (props: IShowBooksProps) => {
                 </button>
               </td>
               <td>
-                <button>
-                  {" "}
+                <button onClick={() => handleDelete(book.id)}>
                   <FontAwesomeIcon className="delete-icon" icon={faTrash} />
                 </button>
               </td>
