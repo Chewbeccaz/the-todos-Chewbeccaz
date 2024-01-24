@@ -1,0 +1,40 @@
+.input-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 95%;
+  color: #fff;
+}
+/* .input-wrapper::placeholder {
+  color: #ffffff4d;
+} */
+
+.input-wrapper input {
+  margin-bottom: 8px;
+  height: 1.6rem;
+  width: 32%;
+}
+
+.input-wrapper button {
+  /* width: 20%;
+  height: 2rem; */
+  background: #003559c9;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+}
+
+p {
+  text-align: left;
+  font-size: 1.2rem;
+  background-color: #ffffffb5;
+  border: 1px solid black;
+  padding: 0.5rem;
+  width: 32%;
+}

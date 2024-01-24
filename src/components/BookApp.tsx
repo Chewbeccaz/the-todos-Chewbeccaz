@@ -61,6 +61,7 @@ export const BookApp = () => {
   return (
     <>
       <h1>To Be Read</h1>
+      <h2>Add new books to your TBR.. </h2>
       <AddBook addBook={handleAddBook} />
       <ShowBooks
         bookList={books}
@@ -73,9 +74,8 @@ export const BookApp = () => {
 
 {
   /*IMORGON: Kolla upp buggen med bakgrunden som flyttar sig
-- Fixa stylingen på inputsen.
--Sortera listan.  
-- Lägg till ChangeBook-funktionen
--Fixa validering om tid finnes. med GetStorage??
+- Fixa stylingen på inputsen.  
+- LÄGGA TILL I SAMMA CHANGEFUNKTION? 
+-Fixa validering i inputs. KAN EJ VARA TOM? 
 -Nollställa inputsen.*/
 }
