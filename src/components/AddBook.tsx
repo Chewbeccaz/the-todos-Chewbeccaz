@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from "react";
+import "../AddBook.css";
 
 interface IAddBookProps {
   addBook: (addedTitle: string, addedAuthor: string) => void;
@@ -28,9 +29,17 @@ export const AddBook = (props: IAddBookProps) => {
 
   return (
     <>
-      <input type="text" onChange={handleTitleChange} value={newBookTitle} />
-      <input type="text" onChange={handleAuthorChange} value={newBookAuthor} />
-      <button onClick={handleClick}>Add New Book</button>
+      <div className="input-wrapper">
+        <label>Enter Title:</label>
+        <input type="text" onChange={handleTitleChange} value={newBookTitle} />
+        <label>Enter Author:</label>
+        <input
+          type="text"
+          onChange={handleAuthorChange}
+          value={newBookAuthor}
+        />
+        <button onClick={handleClick}>Add New Book</button>
+      </div>
     </>
   );
 };

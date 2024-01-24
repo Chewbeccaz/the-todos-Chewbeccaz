@@ -73,9 +73,8 @@ export const BookApp = () => {
 
 {
   /*IMORGON: Kolla upp buggen med bakgrunden som flyttar sig
-- Fixa stylingen på inputsen.
--Sortera listan.  
-- Lägg till ChangeBook-funktionen
--Fixa validering om tid finnes. med GetStorage??
+- Fixa stylingen på inputsen.  
+- LÄGGA TILL I SAMMA CHANGEFUNKTION? 
+-Fixa validering i inputs. KAN EJ VARA TOM? 
 -Nollställa inputsen.*/
 }
