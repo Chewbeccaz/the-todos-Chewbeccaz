@@ -2,19 +2,25 @@ import { useState } from "react";
 import { Book } from "../models/Book";
 import { ShowBooks } from "./ShowBooks";
 import { AddBook } from "./AddBook";
+import { v4 as uuidv4 } from "uuid";
 
 export const BookApp = () => {
   const hardCodedBooks = [
-    new Book(0, "Iron Flame", "Rebecca Yarros", false),
-    new Book(1, "A Court of thorns and roses", "Sarah J. Maas", false),
-    new Book(2, "Too Late", "Colleen Hoover", false),
-    new Book(3, "A Court of Mist and Fury", "Sarah J. Maas", false),
-    new Book(4, "A Court of Wings and Ruin", "Sarah J. Maas", false),
-    new Book(5, "A Court of Frost and Starlight", "Sarah J. Maas", false),
-    new Book(6, "A Court of Silver Flames", "Sarah J. Maas", false),
-    new Book(7, "Boktjuven", "Markus Zusak", false),
-    new Book(8, "Wish You Were Here", "Jodi Picoult", false),
-    new Book(9, "Slammed", "Colleen Hoover", false),
+    new Book(uuidv4(), "Iron Flame", "Rebecca Yarros", false),
+    new Book(uuidv4(), "A Court of thorns and roses", "Sarah J. Maas", false),
+    new Book(uuidv4(), "Too Late", "Colleen Hoover", false),
+    new Book(uuidv4(), "A Court of Mist and Fury", "Sarah J. Maas", false),
+    new Book(uuidv4(), "A Court of Wings and Ruin", "Sarah J. Maas", false),
+    new Book(
+      uuidv4(),
+      "A Court of Frost and Starlight",
+      "Sarah J. Maas",
+      false
+    ),
+    new Book(uuidv4(), "A Court of Silver Flames", "Sarah J. Maas", false),
+    new Book(uuidv4(), "Boktjuven", "Markus Zusak", false),
+    new Book(uuidv4(), "Wish You Were Here", "Jodi Picoult", false),
+    new Book(uuidv4(), "Slammed", "Colleen Hoover", false),
   ];
 
   const [books, setBooks] = useState<Book[]>(
@@ -23,7 +29,7 @@ export const BookApp = () => {
     )
   );
 
-  const handleCheckBox = (id: number) => {
+  const handleCheckBox = (id: string) => {
     setBooks(
       [...books].map((book) =>
         book.id === id ? { ...book, isChecked: !book.isChecked } : book
@@ -31,24 +37,17 @@ export const BookApp = () => {
     );
   };
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     setBooks([...books].filter((book) => book.id !== id));
   };
 
   const handleAddBook = (addedTitle: string, addedAuthor: string) => {
-    setBooks([
-      ...books,
-      new Book(books.length + 1, addedTitle, addedAuthor, false),
-    ]);
+    const newId = uuidv4();
+    const newBook = new Book(newId, addedTitle, addedAuthor, false);
+    setBooks([...books, newBook]);
     console.log(books);
 
-    localStorage.setItem(
-      "listStorage",
-      JSON.stringify([
-        ...books,
-        new Book(books.length + 1, addedTitle, addedAuthor, false),
-      ])
-    );
+    localStorage.setItem("listStorage", JSON.stringify([...books, newBook]));
   };
 
   return (
