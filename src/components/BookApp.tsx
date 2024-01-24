@@ -30,7 +30,10 @@ export const BookApp = () => {
   );
 
   const updateList = (updatedList: Book[]) => {
-    setBooks(updatedList);
+    const sortedList = updatedList.sort((a, b) =>
+      a.isChecked === b.isChecked ? 0 : a.isChecked ? -1 : 1
+    );
+    setBooks(sortedList);
     localStorage.setItem("listStorage", JSON.stringify(updatedList));
   };
 
