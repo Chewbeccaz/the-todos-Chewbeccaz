@@ -61,6 +61,7 @@ export const BookApp = () => {
   return (
     <>
       <h1>To Be Read</h1>
+      <h2>Add new books to your TBR.. </h2>
       <AddBook addBook={handleAddBook} />
       <ShowBooks
         bookList={books}

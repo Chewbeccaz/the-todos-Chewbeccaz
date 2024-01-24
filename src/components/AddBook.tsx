@@ -12,6 +12,8 @@ export const AddBook = (props: IAddBookProps) => {
   const handleClick = () => {
     props.addBook(newBookTitle, newBookAuthor);
     console.log(newBookTitle, newBookAuthor);
+    setNewBookTitle("");
+    setNewBookAuthor("");
   };
 
   //   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -30,13 +32,18 @@ export const AddBook = (props: IAddBookProps) => {
   return (
     <>
       <div className="input-wrapper">
-        <label>Enter Title:</label>
-        <input type="text" onChange={handleTitleChange} value={newBookTitle} />
-        <label>Enter Author:</label>
+        <input
+          type="text"
+          onChange={handleTitleChange}
+          value={newBookTitle}
+          placeholder="Add the title here.."
+        />
+
         <input
           type="text"
           onChange={handleAuthorChange}
           value={newBookAuthor}
+          placeholder="Add the author here.."
         />
         <button onClick={handleClick}>Add New Book</button>
       </div>
