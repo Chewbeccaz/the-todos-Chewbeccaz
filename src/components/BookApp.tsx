@@ -5,18 +5,16 @@ import { AddBook } from "./AddBook";
 
 export const BookApp = () => {
   const hardCodedBooks = [
-    new Book(1, "Iron Flame", "Rebecca Yarros", false),
-    new Book(2, "A Court of thorns and roses", "Sarah J. Maas", false),
-    new Book(3, "Too Late", "Colleen Hoover", false),
-    new Book(4, "A Court of Mist and Fury", "Sarah J. Maas", false),
-    new Book(5, "A Court of Wings and Ruin", "Sarah J. Maas", false),
-    new Book(6, "A Court of Frost and Starlight", "Sarah J. Maas", false),
-    new Book(7, "A Court of Silver Flames", "Sarah J. Maas", false),
-    new Book(8, "Boktjuven", "Markus Zusak", false),
-    new Book(9, "Confess", "Colleen Hoover", false),
-    new Book(10, "Layla", "Colleen Hoover", false),
-    new Book(11, "Wish You Were Here", "Jodi Picoult", false),
-    new Book(12, "Slammed", "Colleen Hoover", false),
+    new Book(0, "Iron Flame", "Rebecca Yarros", false),
+    new Book(1, "A Court of thorns and roses", "Sarah J. Maas", false),
+    new Book(2, "Too Late", "Colleen Hoover", false),
+    new Book(3, "A Court of Mist and Fury", "Sarah J. Maas", false),
+    new Book(4, "A Court of Wings and Ruin", "Sarah J. Maas", false),
+    new Book(5, "A Court of Frost and Starlight", "Sarah J. Maas", false),
+    new Book(6, "A Court of Silver Flames", "Sarah J. Maas", false),
+    new Book(7, "Boktjuven", "Markus Zusak", false),
+    new Book(8, "Wish You Were Here", "Jodi Picoult", false),
+    new Book(9, "Slammed", "Colleen Hoover", false),
   ];
 
   const [books, setBooks] = useState<Book[]>(
