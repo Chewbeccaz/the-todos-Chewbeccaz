@@ -29,16 +29,21 @@ export const BookApp = () => {
     )
   );
 
+  const updateList = (updatedList: Book[]) => {
+    setBooks(updatedList);
+    localStorage.setItem("listStorage", JSON.stringify(updatedList));
+  };
+
   const handleCheckBox = (id: string) => {
-    setBooks(
-      [...books].map((book) =>
-        book.id === id ? { ...book, isChecked: !book.isChecked } : book
-      )
+    const updatedBook = [...books].map((book) =>
+      book.id === id ? { ...book, isChecked: !book.isChecked } : book
     );
+    updateList(updatedBook);
   };
 
   const handleDelete = (id: string) => {
-    setBooks([...books].filter((book) => book.id !== id));
+    const updatedBook = [...books].filter((book) => book.id !== id);
+    updateList(updatedBook);
   };
 
   const handleAddBook = (addedTitle: string, addedAuthor: string) => {
@@ -68,5 +73,6 @@ export const BookApp = () => {
 - Fixa stylingen på inputsen.
 -Sortera listan.  
 - Lägg till ChangeBook-funktionen
--Fixa validering om tid finnes. med GetStorage??*/
+-Fixa validering om tid finnes. med GetStorage??
+-Nollställa inputsen.*/
 }
