@@ -4,7 +4,7 @@ import { ShowBooks } from "./ShowBooks";
 import { AddBook } from "./AddBook";
 
 export const BookApp = () => {
-  const [books, setBooks] = useState<Book[]>([
+  const hardCodedBooks = [
     new Book(1, "Iron Flame", "Rebecca Yarros", false),
     new Book(2, "A Court of thorns and roses", "Sarah J. Maas", false),
     new Book(3, "Too Late", "Colleen Hoover", false),
@@ -17,7 +17,13 @@ export const BookApp = () => {
     new Book(10, "Layla", "Colleen Hoover", false),
     new Book(11, "Wish You Were Here", "Jodi Picoult", false),
     new Book(12, "Slammed", "Colleen Hoover", false),
-  ]);
+  ];
+
+  const [books, setBooks] = useState<Book[]>(
+    JSON.parse(
+      localStorage.getItem("listStorage") || JSON.stringify(hardCodedBooks)
+    )
+  );
 
   const handleCheckBox = (id: number) => {
     setBooks(
@@ -36,6 +42,15 @@ export const BookApp = () => {
       ...books,
       new Book(books.length + 1, addedTitle, addedAuthor, false),
     ]);
+    console.log(books);
+
+    localStorage.setItem(
+      "listStorage",
+      JSON.stringify([
+        ...books,
+        new Book(books.length + 1, addedTitle, addedAuthor, false),
+      ])
+    );
   };
 
   return (
@@ -53,6 +68,8 @@ export const BookApp = () => {
 
 {
   /*IMORGON: Kolla upp buggen med bakgrunden som flyttar sig
-- Fixa stylingen på inputsen. 
-- Lägg till ChangeBook-funktionen*/
+- Fixa stylingen på inputsen.
+-Sortera listan.  
+- Lägg till ChangeBook-funktionen
+-Fixa validering om tid finnes. med GetStorage??*/
 }
