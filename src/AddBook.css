@@ -29,3 +29,12 @@
   padding: 0.55rem;
   cursor: pointer;
 }
+
+p {
+  text-align: left;
+  font-size: 1.2rem;
+  background-color: #ffffffb5;
+  border: 1px solid black;
+  padding: 0.5rem;
+  width: 32%;
+}

@@ -8,10 +8,15 @@ interface IAddBookProps {
 export const AddBook = (props: IAddBookProps) => {
   const [newBookTitle, setNewBookTitle] = useState("");
   const [newBookAuthor, setNewBookAuthor] = useState("");
+  const [error, setError] = useState("");
 
   const handleClick = () => {
+    if (newBookTitle.trim() === "" || newBookAuthor.trim() === "") {
+      setError("Please fill in both fields");
+      return;
+    }
+    setError("");
     props.addBook(newBookTitle, newBookAuthor);
-    console.log(newBookTitle, newBookAuthor);
     setNewBookTitle("");
     setNewBookAuthor("");
   };
@@ -47,6 +52,7 @@ export const AddBook = (props: IAddBookProps) => {
         />
         <button onClick={handleClick}>Add New Book</button>
       </div>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
 };
