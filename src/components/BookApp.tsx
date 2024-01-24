@@ -2,40 +2,57 @@ import { useState } from "react";
 import { Book } from "../models/Book";
 import { ShowBooks } from "./ShowBooks";
 import { AddBook } from "./AddBook";
+import { v4 as uuidv4 } from "uuid";
 
 export const BookApp = () => {
-  const [books, setBooks] = useState<Book[]>([
-    new Book(1, "Iron Flame", "Rebecca Yarros", false),
-    new Book(2, "A Court of thorns and roses", "Sarah J. Maas", false),
-    new Book(3, "Too Late", "Colleen Hoover", false),
-    new Book(4, "A Court of Mist and Fury", "Sarah J. Maas", false),
-    new Book(5, "A Court of Wings and Ruin", "Sarah J. Maas", false),
-    new Book(6, "A Court of Frost and Starlight", "Sarah J. Maas", false),
-    new Book(7, "A Court of Silver Flames", "Sarah J. Maas", false),
-    new Book(8, "Boktjuven", "Markus Zusak", false),
-    new Book(9, "Confess", "Colleen Hoover", false),
-    new Book(10, "Layla", "Colleen Hoover", false),
-    new Book(11, "Wish You Were Here", "Jodi Picoult", false),
-    new Book(12, "Slammed", "Colleen Hoover", false),
-  ]);
+  const hardCodedBooks = [
+    new Book(uuidv4(), "Iron Flame", "Rebecca Yarros", false),
+    new Book(uuidv4(), "A Court of thorns and roses", "Sarah J. Maas", false),
+    new Book(uuidv4(), "Too Late", "Colleen Hoover", false),
+    new Book(uuidv4(), "A Court of Mist and Fury", "Sarah J. Maas", false),
+    new Book(uuidv4(), "A Court of Wings and Ruin", "Sarah J. Maas", false),
+    new Book(
+      uuidv4(),
+      "A Court of Frost and Starlight",
+      "Sarah J. Maas",
+      false
+    ),
+    new Book(uuidv4(), "A Court of Silver Flames", "Sarah J. Maas", false),
+    new Book(uuidv4(), "Boktjuven", "Markus Zusak", false),
+    new Book(uuidv4(), "Wish You Were Here", "Jodi Picoult", false),
+    new Book(uuidv4(), "Slammed", "Colleen Hoover", false),
+  ];
 
-  const handleCheckBox = (id: number) => {
-    setBooks(
-      [...books].map((book) =>
-        book.id === id ? { ...book, isChecked: !book.isChecked } : book
-      )
-    );
+  const [books, setBooks] = useState<Book[]>(
+    JSON.parse(
+      localStorage.getItem("listStorage") || JSON.stringify(hardCodedBooks)
+    )
+  );
+
+  const updateList = (updatedList: Book[]) => {
+    setBooks(updatedList);
+    localStorage.setItem("listStorage", JSON.stringify(updatedList));
   };
 
-  const handleDelete = (id: number) => {
-    setBooks([...books].filter((book) => book.id !== id));
+  const handleCheckBox = (id: string) => {
+    const updatedBook = [...books].map((book) =>
+      book.id === id ? { ...book, isChecked: !book.isChecked } : book
+    );
+    updateList(updatedBook);
+  };
+
+  const handleDelete = (id: string) => {
+    const updatedBook = [...books].filter((book) => book.id !== id);
+    updateList(updatedBook);
   };
 
   const handleAddBook = (addedTitle: string, addedAuthor: string) => {
-    setBooks([
-      ...books,
-      new Book(books.length + 1, addedTitle, addedAuthor, false),
-    ]);
+    const newId = uuidv4();
+    const newBook = new Book(newId, addedTitle, addedAuthor, false);
+    const updatedBook = [...books, newBook];
+    updateList(updatedBook);
+
+    // localStorage.setItem("listStorage", JSON.stringify([...books, newBook]));
   };
 
   return (
@@ -53,6 +70,9 @@ export const BookApp = () => {
 
 {
   /*IMORGON: Kolla upp buggen med bakgrunden som flyttar sig
-- Fixa stylingen på inputsen. 
-- Lägg till ChangeBook-funktionen*/
+- Fixa stylingen på inputsen.
+-Sortera listan.  
+- Lägg till ChangeBook-funktionen
+-Fixa validering om tid finnes. med GetStorage??
+-Nollställa inputsen.*/
 }

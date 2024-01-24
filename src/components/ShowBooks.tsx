@@ -6,16 +6,16 @@ import "../ShowBooks.css";
 
 interface IShowBooksProps {
   bookList: Book[];
-  handleCheckbox: (id: number) => void;
-  handleDelete: (id: number) => void;
+  handleCheckbox: (id: string) => void;
+  handleDelete: (id: string) => void;
 }
 
 export const ShowBooks = (props: IShowBooksProps) => {
-  const handleCheckBox = (id: number) => {
+  const handleCheckBox = (id: string) => {
     props.handleCheckbox(id);
   };
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     props.handleDelete(id);
   };
 
