@@ -49,10 +49,10 @@ export const BookApp = () => {
   const handleAddBook = (addedTitle: string, addedAuthor: string) => {
     const newId = uuidv4();
     const newBook = new Book(newId, addedTitle, addedAuthor, false);
-    setBooks([...books, newBook]);
-    console.log(books);
+    const updatedBook = [...books, newBook];
+    updateList(updatedBook);
 
-    localStorage.setItem("listStorage", JSON.stringify([...books, newBook]));
+    // localStorage.setItem("listStorage", JSON.stringify([...books, newBook]));
   };
 
   return (
