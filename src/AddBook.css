@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Philosopher&family=Poppins:wght@300&family=Reenie+Beanie&family=Rubik+Burned&display=swap");
+
 .input-wrapper {
   display: flex;
   justify-content: space-around;
@@ -10,31 +12,37 @@
   width: 95%;
   color: #fff;
 }
-/* .input-wrapper::placeholder {
-  color: #ffffff4d;
-} */
 
 .input-wrapper input {
-  margin-bottom: 8px;
-  height: 1.6rem;
-  width: 32%;
+  height: 1.5rem;
+  width: 48%;
+  padding: 0.5rem;
+  border: 1px solid #003559c9;
+  border-radius: 4px;
+  margin-right: 4px;
 }
 
-.input-wrapper button {
-  /* width: 20%;
-  height: 2rem; */
+.add-btn {
   background: #003559c9;
   color: #fff;
   border: none;
-  padding: 0.55rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+  border-radius: 4px;
+  width: 30;
 }
 
-p {
-  text-align: left;
-  font-size: 1.2rem;
-  background-color: #ffffffb5;
-  border: 1px solid black;
-  padding: 0.5rem;
-  width: 32%;
+.add-btn:hover {
+  background: #003559;
+}
+
+.error-msg {
+  color: red;
+  font-family: "montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 auto;
+  background-color: #ffffffb9;
+  text-align: center;
+  width: 50%;
 }

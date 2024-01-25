@@ -3,8 +3,8 @@
 :root {
   --th-color: #0035599d;
   --td-color: #0ba76ba4;
-  --even-color: #0ba76ba4;
-  --odd-color: #b6e9b7ad;
+  --even-color: #303539a0;
+  --odd-color: #697278ac;
   --secondary-color: #eefbeb;
 }
 
@@ -26,12 +26,12 @@ body {
 .book-table td {
   border: 1px solid #ebf0ef;
   padding: 16px;
-  text-align: center;
+  text-align: left;
+  color: white;
 }
 
 .book-table th {
   background-color: var(--th-color);
-  color: white;
 }
 
 .even-row {
@@ -45,9 +45,3 @@ body {
 .delete-icon {
   color: var(--th-color);
 }
-/* h1 {
-  color: white;
-  font-family: "Reenie Beanie", cursive;
-  font-weight: 400;
-  font-style: normal;
-} */

@@ -50,9 +50,15 @@ export const AddBook = (props: IAddBookProps) => {
           value={newBookAuthor}
           placeholder="Add the author here.."
         />
-        <button onClick={handleClick}>Add New Book</button>
+        <button onClick={handleClick} className="add-btn">
+          Add Book
+        </button>
       </div>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && (
+        <p className="error-msg" style={{ color: "red" }}>
+          {error}
+        </p>
+      )}
     </>
   );
 };
