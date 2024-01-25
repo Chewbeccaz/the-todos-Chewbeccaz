@@ -41,6 +41,7 @@ export const ShowBooks = (props: IShowBooksProps) => {
                   type="checkbox"
                   checked={book.isChecked}
                   onChange={() => handleCheckBox(book.id)}
+                  className="checkbox"
                 />
               </td>
               <td>

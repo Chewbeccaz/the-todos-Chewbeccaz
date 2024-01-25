@@ -4,9 +4,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   background: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
   width: 95%;
@@ -20,16 +19,19 @@
   border: 1px solid #003559c9;
   border-radius: 4px;
   margin-right: 4px;
+  font-family: "montserrat", sans-serif;
+  font-size: 16px;
 }
 
 .add-btn {
   background: #003559c9;
   color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
+  border: 1px solid var(--secondary-color);
+  padding: 0.5rem;
   cursor: pointer;
   border-radius: 4px;
-  width: 30;
+  font-family: "Reenie Beanie", cursive;
+  font-size: 1.2rem;
 }
 
 .add-btn:hover {

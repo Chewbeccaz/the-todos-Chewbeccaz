@@ -32,6 +32,15 @@ body {
 
 .book-table th {
   background-color: var(--th-color);
+  font-family: "Reenie Beanie", cursive;
+  font-size: 1.8rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.book-table td {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
 }
 
 .even-row {
@@ -44,4 +53,12 @@ body {
 
 .delete-icon {
   color: var(--th-color);
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 4px;
+  cursor: pointer;
 }
