@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import "../AddBook.css";
 
 interface IAddBookProps {
@@ -10,7 +10,8 @@ export const AddBook = (props: IAddBookProps) => {
   const [newBookAuthor, setNewBookAuthor] = useState("");
   const [error, setError] = useState("");
 
-  const handleClick = () => {
+  const handleClick = (e: FormEvent) => {
+    e.preventDefault();
     if (newBookTitle.trim() === "" || newBookAuthor.trim() === "") {
       setError("Please fill in both fields");
       return;
@@ -20,11 +21,6 @@ export const AddBook = (props: IAddBookProps) => {
     setNewBookTitle("");
     setNewBookAuthor("");
   };
-
-  //   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-  //     // setNewBookTitle(event.target.value);
-  //     // setNewBookAuthor(event.target.value);
-  //   };
 
   const handleTitleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setNewBookTitle(event.target.value);
