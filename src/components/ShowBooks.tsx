@@ -1,6 +1,5 @@
 import { Book } from "../models/Book";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "../ShowBooks.css";
 
@@ -27,7 +26,6 @@ export const ShowBooks = (props: IShowBooksProps) => {
             <th>Title:</th>
             <th>Author:</th>
             <th>Read:</th>
-            <th>Edit:</th>
             <th>Delete:</th>
           </tr>
         </thead>
@@ -44,12 +42,6 @@ export const ShowBooks = (props: IShowBooksProps) => {
                   checked={book.isChecked}
                   onChange={() => handleCheckBox(book.id)}
                 />
-              </td>
-              <td>
-                <button>
-                  {" "}
-                  <FontAwesomeIcon className="edit-icon" icon={faPenToSquare} />
-                </button>
               </td>
               <td>
                 <button onClick={() => handleDelete(book.id)}>
