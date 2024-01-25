@@ -3,6 +3,7 @@ import { Book } from "../models/Book";
 import { ShowBooks } from "./ShowBooks";
 import { AddBook } from "./AddBook";
 import { v4 as uuidv4 } from "uuid";
+import "../BookApp.css";
 
 export const BookApp = () => {
   const hardCodedBooks = [
@@ -60,7 +61,7 @@ export const BookApp = () => {
 
   return (
     <>
-      <h1>To Be Read</h1>
+      <h1>To Be Read..</h1>
       <h2>Add new books to your TBR.. </h2>
       <AddBook addBook={handleAddBook} />
       <ShowBooks

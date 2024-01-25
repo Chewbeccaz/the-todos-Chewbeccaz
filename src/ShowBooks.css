@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Philosopher&family=Poppins:wght@300&family=Reenie+Beanie&display=swap");
+
 :root {
   --th-color: #0035599d;
-  --td-color: #0b9aa7a4;
-  --even-color: #37c4aaa1;
-  --odd-color: #b6e9c1ad;
+  --td-color: #0ba76ba4;
+  --even-color: #0ba76ba4;
+  --odd-color: #b6e9b7ad;
   --secondary-color: #eefbeb;
 }
 
@@ -10,6 +12,7 @@ body {
   background-image: url(../src/bilder/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   margin: 0;
 }
 
@@ -39,10 +42,12 @@ body {
   background-color: var(--odd-color);
 }
 
-.edit-icon,
 .delete-icon {
   color: var(--th-color);
 }
-h1 {
+/* h1 {
   color: white;
-}
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+} */
