@@ -3,6 +3,7 @@ import { Book } from "../models/Book";
 import { ShowBooks } from "./ShowBooks";
 import { AddBook } from "./AddBook";
 import { v4 as uuidv4 } from "uuid";
+import "../BookApp.css";
 
 export const BookApp = () => {
   const hardCodedBooks = [
@@ -11,12 +12,7 @@ export const BookApp = () => {
     new Book(uuidv4(), "Too Late", "Colleen Hoover", false),
     new Book(uuidv4(), "A Court of Mist and Fury", "Sarah J. Maas", false),
     new Book(uuidv4(), "A Court of Wings and Ruin", "Sarah J. Maas", false),
-    new Book(
-      uuidv4(),
-      "A Court of Frost and Starlight",
-      "Sarah J. Maas",
-      false
-    ),
+    new Book(uuidv4(), "A Court of Frost & Starlight", "Sarah J. Maas", false),
     new Book(uuidv4(), "A Court of Silver Flames", "Sarah J. Maas", false),
     new Book(uuidv4(), "Boktjuven", "Markus Zusak", false),
     new Book(uuidv4(), "Wish You Were Here", "Jodi Picoult", false),
@@ -34,7 +30,7 @@ export const BookApp = () => {
       a.isChecked === b.isChecked ? 0 : a.isChecked ? -1 : 1
     );
     setBooks(sortedList);
-    localStorage.setItem("listStorage", JSON.stringify(updatedList));
+    localStorage.setItem("listStorage", JSON.stringify(sortedList));
   };
 
   const handleCheckBox = (id: string) => {
@@ -54,13 +50,11 @@ export const BookApp = () => {
     const newBook = new Book(newId, addedTitle, addedAuthor, false);
     const updatedBook = [...books, newBook];
     updateList(updatedBook);
-
-    // localStorage.setItem("listStorage", JSON.stringify([...books, newBook]));
   };
 
   return (
     <>
-      <h1>To Be Read</h1>
+      <h1>To Be Read..</h1>
       <h2>Add new books to your TBR.. </h2>
       <AddBook addBook={handleAddBook} />
       <ShowBooks
@@ -71,11 +65,3 @@ export const BookApp = () => {
     </>
   );
 };
-
-{
-  /*IMORGON: Kolla upp buggen med bakgrunden som flyttar sig
-- Fixa stylingen på inputsen.  
-- LÄGGA TILL I SAMMA CHANGEFUNKTION? 
--Fixa validering i inputs. KAN EJ VARA TOM? 
--Nollställa inputsen.*/
-}
