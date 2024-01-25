@@ -27,7 +27,6 @@ export const ShowBooks = (props: IShowBooksProps) => {
             <th>Title:</th>
             <th>Author:</th>
             <th>Read:</th>
-            <th>Edit:</th>
             <th>Delete:</th>
           </tr>
         </thead>
