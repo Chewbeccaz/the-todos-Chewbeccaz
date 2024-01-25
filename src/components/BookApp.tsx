@@ -72,11 +72,3 @@ export const BookApp = () => {
     </>
   );
 };
-
-{
-  /*IMORGON: Kolla upp buggen med bakgrunden som flyttar sig
-- Fixa stylingen på inputsen.  
-- LÄGGA TILL I SAMMA CHANGEFUNKTION? 
--Fixa validering i inputs. KAN EJ VARA TOM? 
--Nollställa inputsen.*/
-}

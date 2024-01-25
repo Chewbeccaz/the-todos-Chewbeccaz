@@ -36,7 +36,7 @@ export const AddBook = (props: IAddBookProps) => {
 
   return (
     <>
-      <div className="input-wrapper">
+      <form className="input-wrapper">
         <input
           type="text"
           onChange={handleTitleChange}
@@ -53,7 +53,7 @@ export const AddBook = (props: IAddBookProps) => {
         <button onClick={handleClick} className="add-btn">
           Add Book
         </button>
-      </div>
+      </form>
       {error && (
         <p className="error-msg" style={{ color: "red" }}>
           {error}
