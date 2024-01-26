@@ -4,6 +4,7 @@ import { ShowBooks } from "./ShowBooks";
 import { AddBook } from "./AddBook";
 import { v4 as uuidv4 } from "uuid";
 import "../BookApp.css";
+import Firework from "./Firework";
 
 export const BookApp = () => {
   const hardCodedBooks = [
@@ -52,6 +53,8 @@ export const BookApp = () => {
     updateList(updatedBook);
   };
 
+  const areAllChecked = books.every((book) => book.isChecked);
+
   return (
     <>
       <h1>To Be Read..</h1>
@@ -62,6 +65,7 @@ export const BookApp = () => {
         handleCheckbox={handleCheckBox}
         handleDelete={handleDelete}
       />
+      {areAllChecked && <Firework />}
     </>
   );
 };
