@@ -8,6 +8,8 @@ const Firework = () => {
     const styling = {
       particleCount: 200,
       spread: 360,
+      startVelocity: 40,
+      origin: { x: 0.5, y: 0.5 },
     };
 
     confetti(styling);

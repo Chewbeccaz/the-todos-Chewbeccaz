@@ -10,14 +10,10 @@ export const BookApp = () => {
   const hardCodedBooks = [
     new Book(uuidv4(), "Iron Flame", "Rebecca Yarros", false),
     new Book(uuidv4(), "A Court of thorns and roses", "Sarah J. Maas", false),
-    new Book(uuidv4(), "Too Late", "Colleen Hoover", false),
     new Book(uuidv4(), "A Court of Mist and Fury", "Sarah J. Maas", false),
     new Book(uuidv4(), "A Court of Wings and Ruin", "Sarah J. Maas", false),
-    new Book(uuidv4(), "A Court of Frost & Starlight", "Sarah J. Maas", false),
-    new Book(uuidv4(), "A Court of Silver Flames", "Sarah J. Maas", false),
     new Book(uuidv4(), "Boktjuven", "Markus Zusak", false),
     new Book(uuidv4(), "Wish You Were Here", "Jodi Picoult", false),
-    new Book(uuidv4(), "Slammed", "Colleen Hoover", false),
   ];
 
   const [books, setBooks] = useState<Book[]>(
