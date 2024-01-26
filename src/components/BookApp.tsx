@@ -65,8 +65,3 @@ export const BookApp = () => {
     </>
   );
 };
-
-{
-  /*IMORGON: 
-När alla checkboxes är ifyllda, en animation av fyrverkeri??*/
-}
