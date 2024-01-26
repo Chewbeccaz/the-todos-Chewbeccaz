@@ -22,12 +22,14 @@ export const AddBook = (props: IAddBookProps) => {
     setNewBookAuthor("");
   };
 
-  const handleTitleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setNewBookTitle(event.target.value);
-  };
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
 
-  const handleAuthorChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setNewBookAuthor(event.target.value);
+    if (name === "title") {
+      setNewBookTitle(value);
+    } else if (name === "author") {
+      setNewBookAuthor(value);
+    }
   };
 
   return (
@@ -35,14 +37,16 @@ export const AddBook = (props: IAddBookProps) => {
       <form className="input-wrapper">
         <input
           type="text"
-          onChange={handleTitleChange}
+          name="title"
+          onChange={handleInputChange}
           value={newBookTitle}
           placeholder="Add the title here.."
         />
 
         <input
           type="text"
-          onChange={handleAuthorChange}
+          name="author"
+          onChange={handleInputChange}
           value={newBookAuthor}
           placeholder="Add the author here.."
         />
