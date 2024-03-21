@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Philosopher&family=Poppins:wght@300&family=Reenie+Beanie&display=swap");
+
+:root {
+  --th-color: #0035599d;
+  --td-color: #0ba76ba4;
+  --even-color: #303539a0;
+  --odd-color: #697278ac;
+  --secondary-color: #eefbeb;
+}
+
+body {
+  background-image: url(../src/bilder/background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.book-table th,
+.book-table td {
+  border: 1px solid #ebf0ef;
+  padding: 16px;
+  text-align: left;
+  color: white;
+}
+
+.book-table th {
+  background-color: var(--th-color);
+  font-family: "Reenie Beanie", cursive;
+  font-size: 1.8rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.book-table td {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.even-row {
+  background-color: var(--even-color);
+}
+
+.odd-row {
+  background-color: var(--odd-color);
+}
+
+.delete-icon {
+  color: var(--th-color);
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 430px) {
+  body {
+    width: fit-content;
+  }
+}
